@@ -1,0 +1,1 @@
+<view bind:__l="__l"><ustatus></ustatus><x-navbar></x-navbar><view class="content"><card></card><card distribution="{{false}}"></card><card></card><card distribution="{{false}}"></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card><card></card></view></view>

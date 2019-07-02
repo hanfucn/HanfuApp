@@ -1,0 +1,12 @@
+{
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "usingComponents": {
+    "x-avatar": "/components/avatar/index",
+    "x-navbar": "/components/navbar/index",
+    "x-status": "/components/status/index"
+  }
+}

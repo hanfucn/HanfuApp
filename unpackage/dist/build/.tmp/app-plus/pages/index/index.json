@@ -1,0 +1,14 @@
+{
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "usingComponents": {
+    "indexheader": "/components/index",
+    "ustatus": "/components/status/index",
+    "wuc-tab": "/components/wuc-tab/wuc-tab",
+    "card": "/components/card/index",
+    "x-navbar": "/components/navbar/index"
+  }
+}

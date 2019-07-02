@@ -1,0 +1,1 @@
+<view class="x-tag" bind:__l="__l"><text>{{title}}</text></view>

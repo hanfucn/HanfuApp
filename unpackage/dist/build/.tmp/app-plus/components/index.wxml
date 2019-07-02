@@ -1,0 +1,1 @@
+<view bind:__l="__l"><text class="a">header</text></view>

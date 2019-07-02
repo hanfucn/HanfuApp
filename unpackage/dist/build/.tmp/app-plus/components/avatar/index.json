@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "x-tag": "/components/tag/index"
+  },
+  "component": true
+}

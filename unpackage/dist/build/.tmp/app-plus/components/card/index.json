@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "x-tag": "/components/tag/index",
+    "x-avatar": "/components/avatar/index"
+  },
+  "component": true
+}

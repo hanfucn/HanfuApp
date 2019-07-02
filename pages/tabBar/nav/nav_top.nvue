@@ -1,0 +1,235 @@
+<template>  
+	<div class="ivu-tabs-nav-container">
+		<div class="ivu-tabs-nav-wrap">
+			<div :style="{height:statusBarHeight+'wx'}"></div><!-- 状态栏占位 -->  
+			<div class="ivu-tabs-nav-scroll">
+				
+				<div class="ivu-tabs-nav">
+					<div class="ivu-tabs-tab">
+						<!----> 标签一 <!---->
+					</div>
+					<div class="ivu-tabs-tab">
+						<!----> 标签二 <!---->
+					</div>
+					<div class="ivu-tabs-tab ivu-tabs-tab-active ivu-tabs-tab-focused ivu-tabs-ink-bar">
+						<!----> 标签三 <!---->
+					</div>
+				</div>
+		
+				
+			</div>  
+		</div> 
+	</div>  
+</template>  
+
+<script>  
+export default {  
+    data () {  
+        return {
+			statusBarHeight: '',
+			height: 97.2,
+			tabList: [
+				{ name: '关注' }, 
+				{ name: '最新' },
+				{ name: '活动' },
+			]
+		}
+    },  
+    created () {  
+        let _t = this;  
+        setTimeout(() => { //获取状态栏高度，setTimeout后才能调用uni.  
+            uni.getSystemInfo({  
+                success: function(res) {  
+                    _t.statusBarHeight = res.statusBarHeight;  
+					_t.height = _t.height - res.statusBarHeight;
+                    console.log(_t.statusBarHeight);  
+                }  
+            });  
+        }, 1);  
+    },
+	computed: {
+	    scrollLeft() {
+	        return (this.tabCur - 1) * 60;
+	    }
+	}
+};  
+</script>  
+<style>  
+
+
+.page-searchList {  
+	    background-color: #FFFFFF;  
+	    justify-content: center;  
+	    align-items: center; 
+		
+		/* height: 97.2px; */
+	}  
+	.header {  
+	    
+	    position: fixed;  
+	    top: 0;
+		padding: 0 4%;
+	}
+	.ivu-tabs-nav-container {
+		margin-bottom: -1px;
+		line-height: 1.5;
+		font-size: 14px;
+		box-sizing: border-box;
+		white-space: nowrap;
+		overflow: hidden;
+		/* position: relative; */
+		zoom: 1;
+	}
+	.ivu-tabs-nav-wrap {
+		overflow: hidden;
+		margin-bottom: -1px;
+		background-image: #FFFFFF; 
+		width: 750px;  
+	}
+	.ivu-tabs-nav-scroll {
+	    height: 97.2px;
+		overflow: hidden;
+		white-space: nowrap;
+		align-items: center;
+		display: flex;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+	}
+	.ivu-tabs-nav {
+		padding-left: 0;
+		margin: 0;
+		float: left;
+		font-size: 27px;
+		list-style: none;
+		box-sizing: border-box;
+		/* position: relative; */
+		transition: -webkit-transform .5s ease-in-out;
+		transition: transform .5s ease-in-out;
+		transition: transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
+	}
+	.ivu-tabs-nav .ivu-tabs-tab {
+		display: inline-block;
+		height: 100%;
+		padding: 8px 16px;
+		margin-right: 16px;
+		box-sizing: border-box;
+		cursor: pointer;
+		color: #222222;
+		text-decoration: none;
+		/* position: relative; */
+		transition: color .3s ease-in-out;
+	}
+
+	.ivu-tabs-nav .ivu-tabs-tab-active {
+		color: #3D7EFF;
+		font-size: 36px;
+	}
+
+.ivu-tabs-nav:after, .ivu-tabs-nav:before {
+    display: table;
+    content: " ";
+}
+.ivu-tabs-nav:after {
+    clear: both;
+}
+
+.ivu-tabs-nav:after, .ivu-tabs-nav:before {
+    display: table;
+    content: " ";
+}
+.ivu-tabs-ink-bar {
+    height: 2px;
+    box-sizing: border-box;
+    border-bottom: 5px solid #2d8cf0;
+    /* position: absolute; */
+    left: 0;
+    bottom: 1px;
+    z-index: 1;
+    transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+/*  
+.page-searchList {  
+    background-color: #FFFFFF;  
+    justify-content: center;  
+    align-items: center;   
+}  
+.header {  
+    background-image: linear-gradient(to right, #a80077, #66ff00);  
+    width: 750px;  
+    position: fixed;  
+    top: 0;
+	padding: 0 4%;
+}
+.tabs {
+    height: 97.2px;
+	justify-content: center;  
+}
+
+
+ 
+div,
+scroll-view,
+swiper {
+	box-sizing: border-box;
+}
+.wuc-tab {
+    white-space: nowrap;
+}
+.wuc-tab-item {
+    height: 90upx;
+    display: inline-block;
+    line-height: 90upx;
+    margin: 0 10upx;
+    padding: 0 20upx;
+	color: #787878;
+}
+
+.wuc-tab-item.cur {
+    border-bottom: 7upx solid #3d7eff;
+	border-radius: 3upx;
+	font-weight: 600;
+}
+
+.wuc-tab.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1024;
+	box-shadow: 0 1upx 6upx rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+    display: flex;
+}
+.text-center {
+    text-align: center;
+}
+.flex-sub {
+    flex: 1;
+}
+.text-blue{
+  color:#0081ff;
+}
+.text-white{
+  color:#ffffff;
+}
+.bg-white{
+    background-color: #ffffff;
+}
+.bg-blue{
+    background-color: #0081ff;
+}
+.text-orange{
+  color: #f37b1d
+}
+
+.text-xl {
+	font-size: 36upx;
+}
+ */
+</style>
+

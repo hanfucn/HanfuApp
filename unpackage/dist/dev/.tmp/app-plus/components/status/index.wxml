@@ -1,0 +1,1 @@
+<view class="{{['status',(backdrop)?'white':'']}}" style="{{'position:'+(headerPosition)+';'+('top:'+(statusTop)+';')+('opacity:'+(afterHeaderOpacity)+';')+('background-color:'+(styles)+';')}}"></view>
