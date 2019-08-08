@@ -28,8 +28,9 @@ Hanfu 是一个开源的 [Python] 项目，这意味着您可以自由地在您�
 Hanfu 社区 对您的服务器有一定的要求
 
 - 一台支持 URL 重写的主机，Nginx、Apache
-- **Python >= 3.6**
-- 安装 requeirement.txt 下 pip 包：
+- **nodejs >= 10.1**
+- uniapp
+- vue3
 
 
 快速使用
@@ -47,9 +48,7 @@ Hanfu 社区 对您的服务器有一定的要求
 从 Git 上 clone 源码并安装依赖:
 
 ```bash
-$ git clone git@github.com:hanfucn/HanfuForum.git
-$ npm i
-$ npm run serve
+$ git clone git@github.com:hanfucn/HanfuApp.git
 ```
 
 接下来请参考「快速安装向导」进行后续安装。
